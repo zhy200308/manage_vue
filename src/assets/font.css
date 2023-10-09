@@ -1,0 +1,56 @@
+/* 使用 @font-face 引入自定义字体 */
+@font-face {
+    font-family: '仿宋-GB2312'; /* 字体名称，可自定义 */
+    src: url('../font/仿宋-GB2312.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '思源宋体-Heavy.otf'; /* 字体名称，可自定义 */
+    src: url('../font/思源宋体-Heavy.otf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正黑体_GBK'; /* 字体名称，可自定义 */
+    src: url('../font/方正黑体_GBK.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正小标宋_GBK'; /* 字体名称，可自定义 */
+    src: url('../font/方正小标宋_GBK.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正楷体_GBK'; /* 字体名称，可自定义 */
+    src: url('../font/方正楷体_GBK.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正仿宋_GBK'; /* 字体名称，可自定义 */
+    src: url('../font/方正仿宋_GBK.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正小标宋_GBK'; /* 字体名称，可自定义 */
+    src: url('../font/方正小标宋_GBK.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '方正黑体简体'; /* 字体名称，可自定义 */
+    src: url('../font/方正黑体简体.ttf') format('truetype'); /* 字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+/* 示例：将自定义字体应用于特定元素 */
+.custom-text {
+    font-family: '方正黑体_GBK', sans-serif; /* 使用自定义字体 */
+    font-size: 16px; /* 设置字体大小 */
+    font-weight: 9; /* 设置字体粗细 */
+}

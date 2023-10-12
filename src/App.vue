@@ -4,6 +4,6 @@
   </div>
 </template>
 <style>
-gg
+
 </style>
 

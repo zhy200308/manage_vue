@@ -45,7 +45,7 @@ export default {
   name:"Manage",
   components:{
     HeaderBar,
-    AsideMenu
+    AsideMenu,
   },
   data() {
     return {

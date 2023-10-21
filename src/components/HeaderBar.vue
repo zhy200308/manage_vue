@@ -5,19 +5,33 @@ export default {
   name:"HeaderBar",
   data(){
     return{
-      user:localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")):{}
+      // user:localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")):{}
     }
   },
+
   props: {
     collapseBtnClass:String,
     collapse: Boolean, // 在这里接收 collapse 属性
   },
   computed: {
+    user() {
+      return this.$store.state.user;
+    },
     breadcrumb() {
       return this.$store.state.breadcrumb;
     },
   },
-
+  // mounted() {
+  //   this.identifyCode = '';
+  //   this.makeCode(this.identifyCodes, 4);
+  //   document.addEventListener('keyup', this.enterKeyup);
+  //
+  //   // 从 localStorage 中获取用户信息
+  //   const userJSON = localStorage.getItem("user");
+  //   if (userJSON) {
+  //     this.user = JSON.parse(userJSON);
+  //   }
+  // },
   methods: {
 
     toggleCollapse() {
@@ -27,9 +41,22 @@ export default {
     logout() {
       // 清除用户会话信息
       localStorage.removeItem('user');
+      this.$store.commit('clearToken');
+      localStorage.removeItem('token'); // 清除 localStorage 中的 JWT
+
+      // // 清除 JWT 以退出登录
+      // this.$store.commit('clearToken'); // 假设你的 Vuex 存储了 JWT
+
       this.$message.success("退出成功");
       // 跳转到登录页面
       this.$router.replace('/login');
+    },
+    ToPerson() {
+      // 检查当前路径是否已经是 '/person'
+      if (this.$route.path !== '/person') {
+        // 只有当当前路径不是 '/person' 时才进行跳转
+        this.$router.push('/person');
+      }
     },
   },
 
@@ -58,7 +85,9 @@ export default {
       </div>
 
       <el-dropdown-menu slot="dropdown" style="width: 100px;text-align: center">
-        <el-dropdown-item style="font-size: 14px;padding: 5px 0">个人信息</el-dropdown-item>
+        <el-dropdown-item style="font-size: 14px;padding: 5px 0">
+          <span @click="ToPerson">个人信息</span>
+        </el-dropdown-item>
         <el-dropdown-item style="font-size: 14px;padding: 5px 0"><span @click="logout">退出登录</span></el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>

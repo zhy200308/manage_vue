@@ -1,5 +1,3 @@
-// store/index.js
-
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -10,8 +8,12 @@ export default new Vuex.Store({
     currentPathName: '',
     currentPageName: '',
     breadcrumb: [],
+    user: JSON.parse(localStorage.getItem("user")) || {},
   },
   mutations: {
+    clearToken(state) {
+      state.token = null;
+    },
     setPath(state) {
       state.currentPathName = localStorage.getItem("currentPathName");
     },
@@ -20,6 +22,10 @@ export default new Vuex.Store({
     },
     setBreadcrumb(state, breadcrumb) {
       state.breadcrumb = breadcrumb;
+    },
+    updateUser(state, newUser) {
+      state.user = newUser;
+      localStorage.setItem("user", JSON.stringify(newUser));
     },
   },
   actions: {},

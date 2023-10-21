@@ -17,6 +17,7 @@
     "vue": "^2.6.14",
     "vue-captcha": "^1.0.2",
     "vue-router": "^3.5.1",
+    "vue-tooltip": "^0.1.0",
     "vuex": "^3.6.2"
   },
   "devDependencies": {

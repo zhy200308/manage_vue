@@ -26,9 +26,9 @@
         <i class="el-icon-menu"></i>
         <span>用户管理</span>
       </el-menu-item>
-      <el-menu-item index="/order">
-        <i class="el-icon-menu"></i>
-        <span>订单管理</span>
+      <el-menu-item index="/files">
+        <i class="el-icon-folder-opened"></i>
+        <span>文件管理</span>
       </el-menu-item>
     </el-submenu>
 

@@ -71,7 +71,7 @@
             title="您确定删除吗？"
             @confirm="Delete(scope.row.id)"
         >
-          <el-button type="danger" size="mini" slot="reference"><i class="el-icon-edit-outline"></i>删除</el-button>
+          <el-button type="danger" size="mini" slot="reference"><i class="el-icon-delete"></i>删除</el-button>
         </el-popconfirm>
       </div>
     </template>
@@ -178,7 +178,7 @@ export default {
 
     },
     Delete(id){
-      this.$request.delete("/user/delId="+id).then(res =>
+      this.request.delete("/user/delId="+id).then(res =>
       {
         if (res){
           this.$message.success("删除成功")
@@ -190,7 +190,7 @@ export default {
     },
 
     load(){
-      this.$request.get("/user/page", {
+      this.request.get("/user/page", {
         params:{
           pageNum:this.pageNum,
           pageSize:this.pageSize,
@@ -210,7 +210,7 @@ export default {
       this.form={}
     },
     save(){
-      this.$request.post("/user",this.form).then(res =>{
+      this.request.post("/user",this.form).then(res =>{
       if (res){
         this.$message.success("保存成功")
         this.dialogFormVisible=false
@@ -248,7 +248,7 @@ export default {
     },
     deleteBatch(){
       let ids=this.multipleSelection.map(v =>v.id)//[{},{},{}]
-      this.$request.post("user/delete/delBatch",ids).then(res =>
+      this.request.post("user/delete/delBatch",ids).then(res =>
       {
         if (res){
           this.$message.success("批量删除成功")

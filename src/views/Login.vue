@@ -67,19 +67,24 @@ export default {
         if (valid) {
           if (!this.code) {
             this.$message.error("验证码错误");
+            this.refreshCode(); // 刷新验证码
             return;
           }
           // 检查用户输入的验证码是否与服务器生成的验证码匹配
           if (this.code !== this.identifyCode) {
             this.$message.error("验证码错误");
+            this.refreshCode(); // 刷新验证码
             return;
           }
           // 继续进行登录逻辑
-          this.$request.post("/user/login", this.user).then(res => {
+          this.request.post("/user/login", this.user).then(res => {
             if (res.code ==='200') {
               localStorage.setItem("user",JSON.stringify(res.data))//将用户信息储存到浏览器
               this.$message.success("欢迎登录");
-              this.$router.push('/');
+              this.$router.push({path:'/'}).then(()=>{
+                window.location.reload();
+              });
+
             } else {
               this.$message.error(res.msg);
 
@@ -128,7 +133,7 @@ export default {
 </el-form>
       <div style="margin: 10px 0;text-align: center">
         <el-button type="primary" size="medium" autocomplete="off" style="border-radius: 10px" @click="login">登录</el-button>
-        <el-button type="success" size="medium" autocomplete="off" style="border-radius: 10px">注册</el-button>
+        <el-button type="success" size="medium" autocomplete="off" style="border-radius: 10px" @click="$router.push('/register')">注册</el-button>
       </div>
     </div>
   </div>

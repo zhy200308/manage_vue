@@ -32,12 +32,6 @@
 </style>
 
 <script>
-
-
-
-
-
-
 import AsideMenu from "@/components/Aside.vue";
 import HeaderBar from "@/components/HeaderBar.vue";
 

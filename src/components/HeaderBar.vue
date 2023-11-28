@@ -41,13 +41,14 @@ export default {
     logout() {
       // 清除用户会话信息
       localStorage.removeItem('user');
-      this.$store.commit('clearToken');
-      localStorage.removeItem('token'); // 清除 localStorage 中的 JWT
+      localStorage.removeItem('token'); // 清除用户数据和token
 
-      // // 清除 JWT 以退出登录
-      // this.$store.commit('clearToken'); // 假设你的 Vuex 存储了 JWT
+      this.$store.commit('clearToken'); // 清除 Vuex 中的 JWT（如果有）
+
+      this.$store.commit('clearUser'); // 清除 Vuex 中的用户数据
 
       this.$message.success("退出成功");
+
       // 跳转到登录页面
       this.$router.replace('/login');
     },
@@ -80,7 +81,7 @@ export default {
       <div style="display: inline-block">
         <img :src="user.avatarUrl" alt=""
         style="width: 30px;border-radius: 50%;position: relative;top: 10px;right: 5px">
-        <i class="el-icon-arrow-down" style="margin-right: 15px  ;font-size: 18px;color: #242525;font-weight: bolder"></i>
+        <i class="el-icon-arrow-down" style="font-size: 18px;color: #242525;font-weight: bolder"></i>
         <span style="color: #242525 ;font-size: 18px;font-family: 仿宋-GB2312 ;font-weight: bolder">{{user.nickname}}</span>
       </div>
 

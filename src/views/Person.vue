@@ -43,7 +43,7 @@ export default {
     <el-form  label-width="80px" size="small">
       <el-upload
           class="avatar-uploader"
-          action="http://localhost:8081/files/upload"
+          action="http://localhost:9099/files/upload"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           v-tooltip="'点击修改头像'" >

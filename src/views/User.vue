@@ -14,7 +14,7 @@
 </div>
 <div style=" padding: 10px 0;">
 <el-button type="success" size="small" @click="exp"><i class="el-icon-download" style="margin-right: 6px" ></i>导出</el-button>
-  <el-upload action="http://localhost:8081/user/import" :show-file-list="false" accept="xlsx" :on-success="handleExeclImportSuccess" style="display: inline-block">
+  <el-upload action="http://localhost:9099/user/import" :show-file-list="false" accept="xlsx" :on-success="handleExeclImportSuccess" style="display: inline-block">
     <el-button type="warning" size="small" style="margin-left: 6px"><i class="el-icon-upload2" style="margin-right: 6px;" ></i>导入</el-button>
   </el-upload>
 
@@ -165,7 +165,7 @@ export default {
 
     },
     exp() {
-       window.open("http://localhost:8081/user/export")
+       window.open("http://localhost:9099/user/export")
     },
 
     handleExeclImportSuccess(){

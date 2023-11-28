@@ -9,10 +9,14 @@ export default new Vuex.Store({
     currentPageName: '',
     breadcrumb: [],
     user: JSON.parse(localStorage.getItem("user")) || {},
+    token: null,
   },
   mutations: {
     clearToken(state) {
       state.token = null;
+    },
+    clearUser(state) {
+      state.user = {};
     },
     setPath(state) {
       state.currentPathName = localStorage.getItem("currentPathName");

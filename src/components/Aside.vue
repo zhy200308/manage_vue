@@ -23,7 +23,7 @@
         <span>系统管理</span>
       </template>
       <el-menu-item index="/user">
-        <i class="el-icon-menu"></i>
+        <i class="el-icon-user-solid"></i>
         <span>用户管理</span>
       </el-menu-item>
       <el-menu-item index="/files">

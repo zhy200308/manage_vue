@@ -91,11 +91,13 @@ export default {
         if (valid) {
           if (!this.code) {
             this.$message.error("请输入验证码");
+            this.refreshCode()
             return;
           }
           // 检查用户输入的验证码是否与服务器生成的验证码匹配
           if (this.code !== this.identifyCode) {
             this.$message.error("验证码错误");
+            this.refreshCode()
             return;
           }
           if(this.user.confirmPassword!==this.user.password){

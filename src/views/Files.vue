@@ -102,7 +102,7 @@ data(){
     <el-button type="warning" @click="reset"  >重置</el-button>
   </div>
   <div style=" padding: 10px 0;">
-    <el-upload action="http://localhost:8081/files/upload" :show-file-list="false" :on-success="handleFilesUploadSuccess" style="display: inline-block">
+    <el-upload action="http://localhost:9099/files/upload" :show-file-list="false" :on-success="handleFilesUploadSuccess" style="display: inline-block">
       <el-button type="warning" size="small" style="margin-left: 6px"><i class="el-icon-upload2" style="margin-right: 6px;" ></i>上传文件</el-button>
     </el-upload>
 
